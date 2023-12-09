@@ -1,0 +1,46 @@
+Install Visual Studio Code:
+Download and install Visual Studio Code from https://code.visualstudio.com/.
+
+Install Python:
+Download and install Python from https://www.python.org/downloads/. During installation, make sure to check the option that says "Add Python to PATH."
+Windows: type python3 in powershell, it will open Windows store to install the latest Python
+
+Open Visual Studio Code:
+After installing VS Code, open it.
+
+Install Python Extension for Visual Studio Code:
+In VS Code, go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or use the keyboard shortcut Ctrl+Shift+X. Search for "Python" in the Extensions view, and install the one provided by Microsoft.
+
+Create a Virtual Environment:
+Open the integrated terminal in VS Code (View -> Terminal or `Ctrl+``). Navigate to your project folder and create a virtual environment. Run the following commands:
+
+'''
+python -m venv venv
+Activate the virtual environment:
+'''
+On Windows:
+bash
+Copy code
+.\venv\Scripts\activate
+On macOS/Linux:
+bash
+Copy code
+source venv/bin/activate
+Install FastAPI:
+With the virtual environment activated, install FastAPI using pip:
+
+bash
+Copy code
+pip install fastapi uvicorn
+Create a FastAPI Project:
+Create a new file, for example, main.py, and write a simple FastAPI application. Here's a minimal example:
+
+python
+Copy code
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
