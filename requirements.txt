@@ -1,0 +1,15 @@
+chromadb 
+openai
+langchain
+langchainhub
+python-dotenv==1.0.0
+azure-search-documents==11.3.0
+num2words==0.5.12
+openai==0.27.2
+pdfminer==20191125
+plotly==5.10.0
+langchain
+chromadb
+PyPDF2
+tiktoken
+pandas

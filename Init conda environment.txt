@@ -1,0 +1,23 @@
+## Init conda environment
+
+1. `conda create -n bonbon_ass python=3.11`
+2. `conda activate bonbon_ass`
+3. `pip install -r requirements.txt`
+
+conda install -c conda-forge langchain
+
+# To activate this environment, use
+#
+#     $ conda activate bonbon_ass
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+## Issues:
+###  Command 'python' not found
+Edit file .bashrc to add
+alias python='python3'
+![Fix python3 not found](image.png)
+
+sudo apt-get install python-is-python3

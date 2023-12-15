@@ -1,0 +1,35 @@
+Steps I followed
+For simplicity, I ran the following commands on Ubuntu 20.04 to setup Docker Engine on my machine.
+
+sudo apt-get update
+
+sudo apt-get install \
+ apt-transport-https \
+ ca-certificates \
+ curl \
+ gnupg \
+ lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+ "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+sudo service docker start
+
+sudo groupadd docker
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+Run Docker Commands
+At this point you should have a fully operation Docker Engine installed running on Ubuntu under WSL2. You can check this by trying to run the hello-world image from Docker Hub.
+docker run hello-world
+
+From <https://jflower.co.uk/install-docker-engine-without-docker-desktop-on-windows/> 
