@@ -1,0 +1,11 @@
+## Using powershell to export wsl
+### show list to get the name
+wsl --list
+output: Ubuntu-22.04 (Default)
+wsl --export <Distro> <FileName>
+
+### export
+cd c:\le\export-wsl
+wsl --export "Ubuntu-22.04" ".\leubuntu.zar"
+PS X:\> cd D:\
+PS D:\> wsl --import Ubuntu_copy .\Ubuntu_copy ubuntu.tar
