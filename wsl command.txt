@@ -6,6 +6,12 @@ wsl --export <Distro> <FileName>
 
 ### export
 cd c:\le\export-wsl
-wsl --export "Ubuntu-22.04" ".\leubuntu.zar"
+wsl --export "Ubuntu-22.04" ".\Ubuntu-22.zar"
 PS X:\> cd D:\
 PS D:\> wsl --import Ubuntu_copy .\Ubuntu_copy ubuntu.tar
+
+### import
+wsl –import <Image Name you choose> <Directory to store and run the image> <Directory location of the exported .tar file>
+
+###To run the specific WSL Linux distro imported from the exported .tar backup file
+wsl -d <WSL imported image name>
