@@ -1,7 +1,12 @@
+
 Steps I followed
 For simplicity, I ran the following commands on Ubuntu 20.04 to setup Docker Engine on my machine.
 
 sudo apt-get update
+
+## If there is network issue with "sudo apt-get update", run "sudo nano /etc/resolv.conf" to add 2 below lines in the file, ctrl X to save
+naneserver 8.8.8.8
+naneserver 1.1.1.1
 
 sudo apt-get install \
  apt-transport-https \
