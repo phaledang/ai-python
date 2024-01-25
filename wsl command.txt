@@ -74,6 +74,9 @@ Attach and mount a physical disk in all WSL2 distributions by replacing <DiskPat
 --partition <Partition Number>: Index number of the partition to mount, if not specified defaults to the whole disk.
 --options <MountOptions>: There are some filesystem-specific options that can be included when mounting a disk. For example, ext4 mount options like: wsl --mount -o "data-ordered" or wsl --mount -o "data=writeback. However, only filesystem-specific options are supported at this time. Generic options, such as ro, rw, or noatime, are not supported.
 
+## Go to default user after import
+wsl --distribution ubuntu-22.04 -u ledang
+cd /home/ledang
 # References
 https://learn.microsoft.com/en-us/windows/wsl/basic-commands
 
