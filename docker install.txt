@@ -1,6 +1,5 @@
 
-Steps I followed
-For simplicity, I ran the following commands on Ubuntu 20.04 to setup Docker Engine on my machine.
+# Steps
 
 sudo apt-get update
 
@@ -33,8 +32,7 @@ sudo usermod -aG docker $USER
 
 newgrp docker
 
-Run Docker Commands
-At this point you should have a fully operation Docker Engine installed running on Ubuntu under WSL2. You can check this by trying to run the hello-world image from Docker Hub.
+# Run Docker Commands
 docker run hello-world
 
 From <https://jflower.co.uk/install-docker-engine-without-docker-desktop-on-windows/> 
