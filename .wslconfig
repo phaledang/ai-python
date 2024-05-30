@@ -1,0 +1,14 @@
+## to fix network issue, edit file .wslconfig in C:\Users\<current login user>. Please see below sample content
+[wsl2]
+memory=12GB
+swap=18GB
+
+[experimental]
+autoMemoryReclaim=gradual
+sparseVhd=true
+networkingMode=NAT
+autoProxy=true
+dnsTunneling=true # Here
+useWindowsDnsCache=true # Here
+hostAddressLoopback=true # Here
+bestEffortDnsParsing=true # Here
