@@ -25,3 +25,7 @@ export NVM_DIR="$HOME/.nvm"
 
  #### nvm use system
  #### npm uninstall -g a_module
+
+### Using
+nvm install 18.17.1
+nvm use 18.17.1
