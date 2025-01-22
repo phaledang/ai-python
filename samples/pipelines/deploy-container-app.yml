@@ -1,0 +1,35 @@
+trigger: none
+
+jobs:
+- job: build_and_deploy_job
+  displayName: Build and Deploy Job
+  condition: or(eq(variables['Build.Reason'], 'Manual'),or(eq(variables['Build.Reason'], 'PullRequest'),eq(variables['Build.Reason'], 'IndividualCI')))
+  pool:
+    vmImage: ubuntu-latest
+  variables:
+  - group: the-variable-group-name
+  steps:
+  - checkout: self
+    submodules: true
+  - task: DockerInstaller@0
+    inputs:
+      dockerVersion: '17.09.0-ce'
+  - task: Bash@3
+    displayName: Build and push docker image
+    inputs:
+      targetType: 'filePath'
+      workingDirectory: $(Build.SourcesDirectory)/api
+      filePath: $(Build.SourcesDirectory)/api/build.sh
+      arguments: $(Build.BuildNumber) $(REGISTRY_SERVER) $(DOCKER_USR) $(DOCKER_PWD)
+  - task: AzureContainerApps@1
+    inputs:
+      azureSubscription: 'The subscription connection name'
+      acrName: '$(ACR_NAME)'
+      acrUsername: '$(DOCKER_USR)'
+      acrPassword: '$(DOCKER_PWD)'
+      containerAppName: '$(CONTAINER-APP-NAME)'
+      resourceGroup: '$(RESOURCE-GROUP)'
+      location: '$(LOCATION)'
+      containerAppEnvironment: '$(CONTAINER-APP-ENVIRONMENT)'
+      imageToDeploy: '$(REGISTRY_SERVER)/the-image-prefix:$(Build.BuildNumber)'
+      environmentVariables: 'TENANT_ID=$(TENANT_ID) CLIENT_ID=secretref:client-id API_PORT=8000'
