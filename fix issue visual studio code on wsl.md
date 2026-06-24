@@ -21,4 +21,4 @@ go to the code folder on the wsl
 ```
 code .
 ```
-VS code will work for a short period before the error randomly comes back 
+VS code will be reinstalled and work for a short period before the error randomly comes back 
