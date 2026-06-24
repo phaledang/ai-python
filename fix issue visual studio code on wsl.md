@@ -1,7 +1,8 @@
 run cmd
 
-'' wsl
-
+```
+wsl
+```
 run below command on the wsl
 ```
 rm -rf ~/.vscode-server
