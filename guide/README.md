@@ -24,7 +24,7 @@ This folder contains the VS Code Copilot export `chat.json` and generated CSV fi
 To copy every GitHub Copilot transcript JSON file from VS Code workspace storage into this folder:
 
 ```powershell
-Set-Location 'c:\code\pj aug\tilt-mcp\design'
+Set-Location 'c:\code\..'
 .\chatlog\copy-copilot-transcripts.ps1
 ```
 
@@ -43,7 +43,7 @@ Each run also creates `copy-log-yyyy-MM-dd-HH-mm-ss.csv` in the destination fold
 Open a terminal at the workspace root:
 
 ```powershell
-Set-Location 'c:\code\pj aug\tilt-mcp\design'
+Set-Location 'c:\code\..'
 python .github\skills\convert-chat-json-to-csv\scripts\convert_chat_json_to_csv.py chatlog\chat.json chatlog\csv
 ```
 
@@ -116,7 +116,7 @@ Model,Prompt,Credit,Date,WorkspacePath
 Extract current-month prompts from all eligible workspaces in one run. The script selects workspace folders containing `state.vscdb` and either `GitHub.copilot-chat` or `chatSessions`, filters by each prompt's stored request date, then combines their records:
 
 ```powershell
-Set-Location 'c:\code\pj aug\tilt-mcp\design'
+Set-Location 'c:\code\..'
 python .github\skills\github-copilot-chat-csv\scripts\extract_copilot_chat_csv.py `
   "$env:APPDATA\Code\User\workspaceStorage"
 ```
